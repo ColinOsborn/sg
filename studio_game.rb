@@ -81,7 +81,7 @@ puts movie_listing("goonies", 10)
 puts movie_listing("goldfinger", 9)
 
 a_title = "Bait and Switch"
-puts movie_listing(a_title)
+puts movie_listing(title)
 
 
 #no Parameters
