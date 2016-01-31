@@ -26,7 +26,6 @@ class Movie
   # attr_accessor - same as writing both of these
   # read and write and attribute to the outside world? Then use attr_accessor
 
-
   def initialize(title, rank=0)
     @title = title.capitalize
     @rank = rank
@@ -62,3 +61,37 @@ puts movie3.rank
 movie1.title = "Deez nuts!"
 puts movie1.title
 puts movie1.normalized_rank
+drivers = ["Alonso", "Vettel", "Räikkönen"]
+puts drivers
+puts drivers[1]
+puts drivers[3]
+finns = %w(Rosberg Räikkönen Bottas Hakkinen)
+puts finns
+drivers_seats = []
+drivers_seats[0] = "Palmer"
+drivers_seats[2] = "Bottas"
+drivers_seats[1] = "Button"
+puts drivers_seats
+drivers_seats[4] = "Magnussen"
+puts drivers_seats
+puts finns
+#nil --- the abscences of an object
+cars = []
+cars.push("Mclaren")
+puts cars
+cars.push("Renault")
+cars << "Ferrari"
+puts cars
+puts cars.size
+cars.pop
+puts cars
+#pop takes out the last item, just like JavaScript
+
+movies = [movie1, movie2, movie3]
+puts movies
+
+movies.each do |movie|
+  movie.thumbs_up
+  puts movie
+end
+# a small loop
