@@ -95,3 +95,6 @@ movies.each do |movie|
   puts movie
 end
 # a small loop
+
+players = []
+puts players

@@ -50,3 +50,25 @@ puts player3.name
 # 2. Objects have unique *state* and a common set of *methods*.
 # 3. An *instance* variable exists for the life of an *object*.
 # 4. Instance methods have access to their object's *instance* variables.
+
+players = [player1, player2, player3]
+puts "There are #{players.size} players in the game:"
+players.each do |player|
+  puts player
+end
+
+players.each do |player|
+  puts player.health
+end
+
+players.each do |player|
+  player.blam
+  player.w00t
+  player.w00t
+  puts player
+end
+
+players.pop
+player4 = Player.new("Shemp", 90)
+players.push(player4)
+puts players

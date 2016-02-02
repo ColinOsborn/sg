@@ -81,7 +81,7 @@ puts movie_listing("goonies", 10)
 puts movie_listing("goldfinger", 9)
 
 a_title = "Bait and Switch"
-puts movie_listing(title)
+
 
 
 #no Parameters
@@ -103,3 +103,12 @@ puts movie_listing(title)
 #def welcome(name,age)
 #puts "howdy, #{name}! You don't look #{age}"
 #end
+players = [player1, player2, player3]
+puts "There are #{players.size} players in the game:"
+players.each do |player|
+  puts player
+end
+
+players.each do |player|
+  puts player.health
+end
