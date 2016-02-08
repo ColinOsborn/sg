@@ -90,11 +90,36 @@ puts cars
 movies = [movie1, movie2, movie3]
 puts movies
 
-movies.each do |movie|
-  movie.thumbs_up
-  puts movie
-end
+# movies.each do |movie|
+#   movie.thumbs_up
+#   puts movie
+# end
 # a small loop
 
 players = []
 puts players
+
+class Playlist
+  def initialize(name)
+    @name = name
+    @movies = []
+  end
+
+  def add_movie(movie)
+    @movies << movie
+  end
+
+  def play
+    puts "#{@name}'s playlist:"
+    puts @movies
+
+    @movies.each do |movie|
+      movie.thumbs_up
+      puts movie
+    end
+  end
+end
+playlist1 = Playlist.new("Colin")
+# playlist1.add_movie(movie1)
+# playlist1.add_movie(movie2)
+# playlist1.add_movie(movie3)
