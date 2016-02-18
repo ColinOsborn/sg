@@ -63,26 +63,73 @@ class Movie
   end
 end
 
-movie1 = Movie.new("Rush", 10)
-movie1.thumbs_up
-puts movie1
-# .listing, is the instance method here!
-movie2 = Movie.new("Snatch", 8)
-movie2.thumbs_down
-puts movie2
-movie3 = Movie.new("Die Hard", 9)
-puts movie3
+class Playlist
 
-movie2.title = "Lock Stock, Two Smoking Barrels"
-puts movie2
-puts movie1.normalized_rank
+  def initialize(name)
+    @name = name
+    @movies = []
+  end
 
-movies = [movie1, movie2, movie3]
+  def add_movie(movie)
+    @movies << movie
+  end
 
-movies.each do |m|
-  m.thumbs_up
-  puts movies
+  def play
+    puts "#{@name}'s playlist:"
+    puts @movies
+
+    @movies.each do |movie|
+      movie.thumbs_up
+      puts movie
+    end
+  end
 end
+
+playlist1 = Playlist.new("Colin's playlist")
+movie1 = Movie.new("Rush", 10)
+movie2 = Movie.new("Snatch", 8)
+movie3 = Movie.new("Die Hard", 9)
+playlist1.add_movie(movie1)
+playlist1.add_movie(movie2)
+playlist1.add_movie(movie3)
+playlist1.play
+# Once again, define what you want. Tell, don't ask!
+# also, the way this is set up is call encapsulation, how the movies are stored
+# in the playlist is the movie's responsibility,
+# # we could put these items in an array, hash or database, doesn't matter
+#  Point to take away is that it's encapsulated inside the playlist
+# so we have one point of change if we decide on how they are stored later.
+
+playlist2 = Playlist.new("Carl")
+playlist2.add_movie(movie3)
+movie4 = Movie.new("Talladegga Night's", 20)
+playlist2.add_movie(movie4)
+playlist2.play  
+
+
+
+
+
+# movie1 = Movie.new("Rush", 10)
+# movie1.thumbs_up
+# puts movie1
+# # .listing, is the instance method here!
+# movie2 = Movie.new("Snatch", 8)
+# movie2.thumbs_down
+# # puts movie2
+# movie3 = Movie.new("Die Hard", 9)
+# puts movie3
+#
+# movie2.title = "Lock Stock, Two Smoking Barrels"
+# puts movie2
+# puts movie1.normalized_rank
+#
+# movies = [movie1, movie2, movie3]
+#
+# movies.each do |m|
+#   m.thumbs_up
+#   puts movies
+# end
 
 
 chasis = %w(Mclaren Renault Ferrari)
